@@ -1,0 +1,19 @@
+<div class="tabs-container">
+    <div class="tabs">
+        <button class="tab" [class.active]="activeTab === statusInvited" (click)="setActiveTab(statusInvited)">
+            Invited
+        </button>
+        <button class="tab" [class.active]="activeTab === statusAccepted" (click)="setActiveTab(statusAccepted)">
+            Accepted
+        </button>
+    </div>
+
+    <div class="tab-content">
+        <div *ngIf="loading; else content" class="loading">
+            Loading data...
+        </div>
+        <ng-template #content>
+            <app-card [data]="leads" [showExtraInfo]="(activeTab === statusAccepted)"></app-card>
+        </ng-template>
+    </div>
+</div>
