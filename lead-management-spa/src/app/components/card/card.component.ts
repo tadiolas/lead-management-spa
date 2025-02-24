@@ -54,7 +54,7 @@ export class CardComponent {
       console.log(data)
       if (data) {
         lead.status = Status.Declined;
-        this.data = this.data.filter(x=> x.status === Status.Declined);
+        this.data = this.data.filter(x=> x.status === Status.Invited);
       }
     });
   }
